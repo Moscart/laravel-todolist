@@ -28,6 +28,8 @@ class TodoListServiceImpl implements TodoListService
     {
         $todo = Todo::query()->find($todoId);
 
-        $todo->delete();
+        if ($todo !== null) {
+            $todo->delete();
+        }
     }
 }
